@@ -4,6 +4,6 @@
     "watch": "tailwindcss build -i frontend/input.css -c tailwind.config.js -o static/site.css --watch"
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.6"
+    "tailwindcss": "^3.3.2"
   }
 }
