@@ -6,7 +6,7 @@
         "node": "18.x"
     },
     "scripts": {
-        "heroku-prebuild": "cd static && npm ci --include=dev",
-        "heroku-postbuild": "cd static && npm run build"
+        "heroku-prebuild": "npm ci --include=dev",
+        "heroku-postbuild": "npm run build"
     }
 }
