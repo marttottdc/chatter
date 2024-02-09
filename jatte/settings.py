@@ -33,9 +33,19 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/chat-admin/'
 LOGOUT_REDIRECT_URL = '/'
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [("redis://:p8e28b8c1d11fc5345dccbb2d3be818e126a4a5c2170f565ac957a22725fccc21@ec2-34-226-88-37.compute-1.amazonaws.com:10769")],  # Update this if your Redis server is elsewhere
+        },
+    },
+}
+
 # Application definition
 
 INSTALLED_APPS = [
+
     'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +54,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account',
+    'chat',
     'core',
+
 ]
 
 MIDDLEWARE = [

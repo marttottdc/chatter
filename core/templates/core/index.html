@@ -3,15 +3,15 @@
 {% load static %}
 
 {% block content %}
-    <div class="mt-12 py-12 px-8 grid grid-cols-5 gap-4 items-center border border-rose-200 rounded-xl">
+    <div class="mt-12 py-12 px-8 grid grid-cols-5 gap-4 items-center border border-red-500 rounded-xl">
         <div class="col-span-2">
-            <img src="{% static 'images/header.png' %}">
+            <img class="object-top" src="{% static 'images/moio-chat-admin2.png' %}">
         </div>
 
         <div class="col-span-3">
-            <h1 class="mb-8 text-3xl">Welcome to Jatte</h1>
+            <h1 class="mb-8 text-3xl">Bienvenido a Moio Chat</h1>
 
-            <h2 class="text-lg text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan tortor at sem fermentum tempor. Suspendisse vitae augue dolor. Nunc sed eleifend nulla.</h2>
+            <h2 class="text-lg text-gray-500">Moio Chat permite administrar las conversaciones del chatbot en tiempo real y tomar el control cuando sea necesario.</h2>
         </div>
     </div>
 
@@ -76,4 +76,10 @@
             <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan tortor at sem fermentum tempor.</p> 
         </div>
     </div>
+
+    {% include 'chat/partials/chat_bubble.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}
