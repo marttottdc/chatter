@@ -2,8 +2,8 @@
 import os
 from datetime import timedelta
 from pathlib import Path
-from dotenv import read_dotenv
 
+from dotenv import load_dotenv
 
 import dj_database_url
 import django_on_heroku
@@ -11,7 +11,7 @@ import django_on_heroku
 from datetime import timedelta
 
 
-read_dotenv()
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,11 +34,13 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/chat-admin/'
 LOGOUT_REDIRECT_URL = '/'
 
+REDIS_URL = os.environ.get('REDIS_URL', 'REDIS_URL')
+
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [("redis://:p8e28b8c1d11fc5345dccbb2d3be818e126a4a5c2170f565ac957a22725fccc21@ec2-34-226-88-37.compute-1.amazonaws.com:10769")],  # Update this if your Redis server is elsewhere
+            "hosts": [(REDIS_URL,)],  # Update this if your Redis server is elsewhere
         },
     },
 }

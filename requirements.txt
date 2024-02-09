@@ -16,7 +16,7 @@ decouple==0.0.7
 dj-database-url==2.1.0
 Django==4.2.1
 django-database-url==1.0.3
-django-dotenv==1.4.2
+python-dotenv==1.0.1
 django-on-heroku==1.1.2
 django-storages==1.14.2
 gunicorn==21.2.0
