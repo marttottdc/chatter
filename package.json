@@ -1,12 +1,9 @@
 {
-    "name": "build-django-tailwind",
-    "description": "Run the tailwind build step before django's collectstatic",
-    "version": "1.0.0",
-    "engines": {
-        "node": "18.x"
-    },
-    "scripts": {
-        "heroku-prebuild": "npm ci --include=dev",
-        "heroku-postbuild": "npm run build"
-    }
+  "scripts": {
+    "build": "tailwindcss build -i frontend/input.css -c tailwind.config.js -o static/site.css --minify",
+    "watch": "tailwindcss build -i frontend/input.css -c tailwind.config.js -o static/site.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.6"
+  }
 }
