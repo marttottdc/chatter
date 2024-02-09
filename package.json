@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "tailwindcss build -c tailwind.config.js -o static/site.css --minify",
-    "watch": "tailwindcss build -c tailwind.config.js -o static/site.css --watch"
+    "build": "tailwindcss build -c tailwind.config.js -o static/main.css --minify",
+    "watch": "tailwindcss build -c tailwind.config.js -o static/main.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.2"
